@@ -63,9 +63,11 @@
 	/**
 	* @NAME: string_append
 	* @DESC: Agrega al primer string el segundo
+	* NOTA: Necesito usar Malloc porque si la defino como LiteralString entonces no es modificable.
 	*
 	* Ejemplo:
-	* char *unaPalabra = "HOLA ";
+	* char* unaPalabra = (char*) malloc( sizeof("HOLA ") );
+	* strcpy(unaPalabra,"HOLA ");
 	* char *otraPalabra = "PEPE";
 	*
 	* string_append(&unaPalabra, otraPalabra);
@@ -78,9 +80,11 @@
 	* @NAME: string_append_with_format
 	* @DESC: Concatena al primer string el resultado de aplicar los parametros al
 	* formato especificado
+	* NOTA: Necesito usar Malloc porque si la defino como LiteralString entonces no es modificable.
 	*
 	* Ejemplo:
-	* char *saludo = "HOLA ";
+	* char* saludo = (char*) malloc( sizeof("HOLA ") );
+	* strcpy(saludo,"HOLA ");
 	* char *nombre = "PEPE";
 	*
 	* string_append_with_format(&saludo, "%s!", nombre);
